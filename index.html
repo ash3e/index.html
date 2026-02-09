@@ -1,88 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>For You</title>
     <style>
         body {
-            background-color: #ffffff; /* Pure White */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
+            background-color: #ffe6e6;
+            font-family: 'Arial', sans-serif;
         }
-
-        h1 {
-            color: #333333;
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 20px;
-        }
-
+        h1 { color: #ff4d6d; font-size: 3rem; }
+        .buttons { margin-top: 20px; }
         button {
             padding: 15px 30px;
             font-size: 1.2rem;
-            border-radius: 10px;
-            border: 1px solid #ddd;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        #yesBtn {
-            background-color: #ff4d6d;
-            color: white;
             border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s;
         }
-
-        #noBtn {
-            background-color: #f8f9fa;
-            color: #333;
-            position: relative;
-        }
-
-        #yesBtn:hover {
-            transform: scale(1.1);
-            background-color: #ff0033;
-        }
+        #yesBtn { background-color: #ff4d6d; color: white; margin-right: 10px; }
+        #noBtn { background-color: #adb5bd; color: white; }
+        button:hover { transform: scale(1.1); }
     </style>
 </head>
 <body>
 
-    <div id="content">
-        <h1>Will you be my Valentine?</h1>
-        <div class="buttons">
-            <button id="yesBtn" onclick="accepted()">Yes</button>
-            <button id="noBtn" onmouseover="moveButton()">No</button>
-        </div>
+    <h1>Will you be my Valentine? 🌹</h1>
+    
+    
+    <div class="buttons">
+        <button id="yesBtn" onclick="celebrate()">Yes</button>
+        <button id="noBtn" onmouseover="moveButton()">No</button>
     </div>
 
     <script>
-        function accepted() {
-            document.getElementById('content').innerHTML = `
-                <h1 style="color: #ff4d6d;">Yay! See you on the 14th! ❤️</h1>
-                <p style="font-size: 1.2rem; color: #666; text-align: center;">Best. Day. Ever.</p>
-            `;
+        function celebrate() {
+            alert("YEYYY!! SEE YOU! <3 ");
         }
 
         function moveButton() {
             const btn = document.getElementById('noBtn');
-            // This makes the button jump away so they can't click "No"
             const x = Math.random() * (window.innerWidth - btn.offsetWidth);
             const y = Math.random() * (window.innerHeight - btn.offsetHeight);
-            
             btn.style.position = 'absolute';
             btn.style.left = x + 'px';
             btn.style.top = y + 'px';
         }
     </script>
-
 </body>
 </html>
